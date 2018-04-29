@@ -1,1 +1,0 @@
-# glo_plugin_spectacle
