@@ -1,0 +1,49 @@
+.mosaique{
+    text-align: center;
+}
+.imgMosaique{
+    margin: 0 auto;
+    max-height: 337px;
+}
+.row{
+    margin: 50px auto!important;
+}
+.overlay-image {
+    padding: 0 5px;
+    margin-bottom: 10px;
+    display: block;
+}
+.overlay-image .hover {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    width: 81%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0px;
+    left: 30px;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+.overlay-image:hover .hover {
+    opacity: 1;
+}
+.overlay-image .hover .btn {
+    color: white;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #a11a25;
+    margin-bottom: 30px;
+}
+@media screen and (max-width: 767px) {
+    .overlay-image img {
+        padding: 0 30px;
+    }
+}
+@media screen and (min-width:767px) and (max-width: 991px) {
+    .overlay-image img {
+        padding: 0 20px;
+    }
+}

@@ -60,22 +60,35 @@
 			$atts = shortcode_atts(array('order'=>''),$atts);
 			$args = array('post_type' => 'spectacle', 'order'=> $atts['order'],);
 			$query = new WP_Query($args);
-			if ($query -> have_posts()): 
+			if ($query -> have_posts()):
+				
+				$compteur = 0;
+				echo '<div class="container-fluid">';
+				echo '<div class="row mosaique">';
 				
 					while($query -> have_posts()): 
 						$query -> the_post();
+						if($compteur == 5){
+							$compteur = 0;
+						}
 						?>
-						<h1>
-						<?php       
-						the_title(); // echo the field du champ pour l'image du spectacle
-						?>
-						</h1>
-                    	<img src="<?php echo the_field('affiche'); ?>" alt="">
+
+						<div class="overlay-image col-xs-12 col-sm-4 col-md-2 <?php if($compteur == 0){echo 'col-md-offset-1'; }?>">
+							<a href="<?php the_permalink();?>">
+								<img class="imgMosaique" src="<?php echo the_field('affiche'); ?>" alt="">
+								<div class="hover">
+									<span class="btn">Read more</span>
+								</div>
+							</a>
+						</div>
+
 						<?php
-						the_content();
-						the_permalink();
+						$compteur++;
 					endwhile;
-				endif;
+
+				echo '</div>';
+				echo '</div>';
+			endif;
 		}	
 
 	}
