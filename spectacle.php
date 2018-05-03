@@ -64,13 +64,14 @@
 				
 					while($query -> have_posts()): 
 						$query -> the_post();
-			?>
-			<h1>
-			<?php       
+						?>
+						<h1>
+						<?php       
 						the_title(); // echo the field du champ pour l'image du spectacle
-			?>
-			</h1>
-			<?php
+						?>
+						</h1>
+                    	<img src="<?php echo the_field('affiche'); ?>" alt="">
+						<?php
 						the_content();
 						the_permalink();
 					endwhile;
