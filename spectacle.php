@@ -44,7 +44,7 @@
 				'show_ui'            => true,
 				'show_in_menu'       => true,
 				'query_var'          => true,
-				'rewrite'            => array( 'slug' => 'Spectacle' ),
+				'rewrite'            => array( 'slug' => 'spectacle' ),
 				'capability_type'    => 'post',
 				'has_archive'        => true,
 				'hierarchical'       => false,
@@ -69,13 +69,13 @@
 					while($query -> have_posts()): 
 						$query -> the_post();
 						if($compteur == 5){
-							$compteur = 0;
+							$compteur = 0;	
 						}
 						?>
 
-						<div class="overlay-image col-xs-12 col-sm-4 col-md-2 <?php if($compteur == 0){echo 'col-md-offset-1'; }?>">
+						<div class="overlay-image col-xs-12 col-sm-4 col-md-4 col-lg-2 <?php if($compteur == 0){echo 'col-lg-offset-1'; }?>">
 							<a href="<?php the_permalink();?>">
-								<img class="imgMosaique" src="<?php echo the_field('affiche'); ?>" alt="">
+								<img class="imgMosaique img-responsive" src="<?php echo the_field('affiche'); ?>" alt="">
 								<div class="hover">
 									<span class="btn">Read more</span>
 								</div>
